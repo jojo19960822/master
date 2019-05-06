@@ -1,0 +1,141 @@
+a标签anchor 
+    锚语义为链接,我认为不同于<link>它是指 指向地点 常写在<a href="">中href=hyperlink reference
+    1.常见不说,注意绝对路径与相对路径,绝对路径为https开头,相对路径为.. 或者. 或者字母开头,注意/开头的也为相对路径出现在//百度/1/2/3中的话直接替换为//百度/开头地址 为根路径
+    2.链接页面内的地址<a href="#p1">点我跳转到id为p1的标签上,在网页上表现为直接跳到标签位置</a> 我认为可以用的的地方为返回顶部或者返回底部
+    3.<a href="mailto:673550538@qq.com">点我自动打开邮箱向我发邮件</a>后续可以加入<a href="mailto:673550538@qq.com?title=1&subject=2&content=3">自动填写标题类容</a>,还有类似功能如tel qq   
+    4.空连接<a href="">空链接</a> 刷新网页,制动链接到本页面
+    5.target属性<a href="" target=""></a>默认-slef在本页面新打开-blank在新的窗口打开 可加自定义单词如<a href="" target="自定义">0</a>表示当打开不同链接时当target内容一致时都会在一个页面内替换打开,类似购物车.
+    6.下载属性<a href="" download=""></a>填写资源即可下载,又与<target-blank>冲突.
+
+
+
+
+<img src="" alt=""> 
+    1.空连接不能,原因如空链接,制动又加载页面两次
+    2.建议写上宽高,让浏览器加载之前知道页面布局
+
+
+
+
+元标签<mate charset="utf-8">,charset为字符集的意思,<utf-8为一种,了解utf-8的> 原因 一个字为一个编号在不同字符集里表示代号不一样
+   1.页面图案<mate rel="icone" href=""> rel为relation链接icon为图标,为了打开每个页面都有图标需要把.png文件放在根目录下,应为浏览器会直接加载./xxx.ico 文件制动添加<meta ralation="icon" herf="" >标签
+   2.<meta name="UA-X-Compatable" content="edge">告诉浏览器用最新的驱动器渲染
+   3.<base href="">基准标签 不建议写
+
+
+
+
+seo手术引擎优化:
+ 1.头部里<title></title>
+ 2.<meta name="keyeords" content="关键字如小米9/小米商城">
+ 3.<meta name="description" content="搜索网页中网站的简介说明">
+ 4.等标签中的内容,还有被引用次数如论文<被引用次数为反向链接>
+<hgroup>
+    <h1>主标题</h1>
+    <h2>副标题</h2>
+</hgroup>表示主标题和副标题包含在一起,我的理解是相当于一个div标签,把两个分开的标题合并在一起成为一个块.
+
+
+
+
+
+ git设置
+ 1.在html文件夹打开git bash运行hs
+
+
+
+
+
+
+
+
+
+
+
+
+git 上传与修改与保存
+第一阶段
+
+1.在文件夹里的项目中打开git bash
+2.创建库 git inint
+3.把文件add进库里 git add 文件名字.txt 或者allin 即为git add . 
+4.查看状态 git status得到
+On branch master<这一行不用看>
+
+Initial commit<这一行看不懂>
+
+Changes to be committed:<这一行是即将被保存到库里的文件如下>
+  (use "git rm --cached <file>..." to unstage)<这一行也看不懂>
+
+        new file:   "\346\226\260\345\273\272\344\275\215\345\233\276\345\233\276\345\203\217.bmp"<乱码>
+        new file:   "\346\226\260\345\273\272\346\226\207\346\234\254\346\226\207\346\241\243 (2).txt"<乱码>
+        new file:   "\346\226\260\345\273\272\346\226\207\346\234\254\346\226\207\346\241\243.txt"<乱码>
+5.给修改命名 git commit -m "名字"  <我认为这是封装一个版本,把上述文件的状态整体保存然后给这个版本命名>  
+$ git commit -m "第一个版本"
+[master (root-commit) 749d1fd] 第一个版本<root-commt根创建即为初次创建,7491fd是版本号></root-commt>
+ 3 files changed, 0 insertions(+), 0 deletions(-)<3个文件被改变了,0个添加 0个删除>
+ create mode 100644 "\346\226\260\345\273\272\344\275\215\345\233\276\345\233\27 <这三行是新加入的文件 100644是刻度可写状态>                                                                                                                                                          6\345\203\217.bmp"
+ create mode 100644 "\346\226\260\345\273\272\346\226\207\346\234\254\346\226\20 <tip 10064是liunx系统对文件的描述-rw-r--r--  可转换为-110100100十进制为644                                                                                                                                                          7\346\241\243 (2).txt"
+ create mode 100644 "\346\226\260\345\273\272\346\226\207\346\234\254\346\226\20                                -6-4--4--   r可读 w可写 x可执行 都用可以用1代表 -用0代表                                                                                                                            7\346\241\243.txt"
+第二阶段
+0.你需要修改的文件保存后,在當前文件夾打開git bash
+1.输入git add . 提交文件到库
+2.输入git status得到
+On branch master
+Changes to be committed:         即将被添加
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   "\347\254\254\344\272\214\344\270\252\347\211\210\346\234\25    新的file文件
+<3.輸入git commit -m "第二個版本封裝"
+1 file changed, 0 insertions(+), 0 deletions(-)
+create mode 100644 "\347\254\254\344\272\214\344\270\252\347\211\210\346\234\254.txt"
+
+
+第三階段
+
+1.gie log <查看提交記錄>
+commit 93d2a10e4b0fa25ac506de5b0013488760d7f45c
+Author: Your Name <you@example.com>
+Date:   Fri May 3 22:50:08 2019 +0800
+
+    第二個版本
+
+commit 749d1fdca0f41a7399b061ad548f05fc93e53cb3
+Author: Your Name <you@example.com>
+Date:   Fri May 3 22:22:23 2019 +0800
+
+    第一个版本<注意排序是反著的,最上面是最新的>
+
+
+第四阶段:
+上传文件到github
+1.打开github 创建新的线上仓库
+2.打开git bash 输入git remote add origin 你的线上仓库地址
+3.表明已经链接后输入git push -u origin master 然后输入账号密码及可
+4.在网页上打开你上传文件的<html><md>可以输入https://jojoba9960822/github.com//master<此为线上仓库名称>/文件名字
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
